@@ -1,10 +1,9 @@
 import express from "express";
+import mongoose from "mongoose"
 
 const app = express();
 const port = 9000;
 
-const routes = require("./app/routes")
-routes(app)
   app.use("/", (req, res) => {
     res.json({ message: "Hello From Express App" });
   });
