@@ -5,7 +5,9 @@ const app = express();
 const port = 9000;
 
 const routes = require("../Express-vercel-demo/app/routes");
-routes(app);
+
+
+app.use("/" , routes)
 
 
 
