@@ -1,20 +1,13 @@
 const express = require("express")
 const mongoose = require("mongoose");
-const user = require("./userModel")
+const userroute = require("./app/user")
 
 
 const app = express();
 const port = 9000;
 
 
-app.use("/alluser" , async(req, res)=>{
-      let data = await user.find();
-      let response = {
-        success: 1,
-        message: data,
-      };
-      res.send(response);
-})
+app.use("/" , userroute)
 
 
 
