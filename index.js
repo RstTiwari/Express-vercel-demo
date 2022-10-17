@@ -4,10 +4,15 @@ import mongoose from "mongoose"
 const app = express();
 const port = 9000;
 
-const routes = require("../Express-vercel-demo/app/routes");
 
-
-app.use("/" , routes)
+app.use("/signin" , async(req, res)=>{
+      console.log("Just got a request!");
+      let response = {
+        success: 1,
+        message: "you bro done it",
+      };
+      res.send(response);
+})
 
 
 
