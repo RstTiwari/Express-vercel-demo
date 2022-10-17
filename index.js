@@ -1,13 +1,19 @@
 const express = require("express")
 const mongoose = require("mongoose");
 const userroute = require("./app/user")
+const creatUser = require("./app/create");
+
+
 
 
 const app = express();
+app.use(express.json());
+
 const port = 9000;
 
 
-app.use("/" , userroute)
+app.use("/api" , userroute)
+app.use("/api", creatUser);
 
 
 

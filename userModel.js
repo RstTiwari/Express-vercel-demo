@@ -1,10 +1,6 @@
 const mongoose = require("mongoose");
 
 const userSchema = mongoose.Schema({
-  userid: {
-    type: Number,
-    required: true,
-  },
   companyName: {
     type: String,
     required: [true, "Please Enter Your Name"],
