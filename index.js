@@ -1,15 +1,17 @@
-import express from "express";
-import mongoose from "mongoose"
+const express = require("express")
+const mongoose = require("mongoose");
+const user = require("./userModel")
+
 
 const app = express();
 const port = 9000;
 
 
-app.use("/signin" , async(req, res)=>{
-      console.log("Just got a request!");
+app.use("/alluser" , async(req, res)=>{
+      let data = await user.find();
       let response = {
         success: 1,
-        message: "you bro done it",
+        message: data,
       };
       res.send(response);
 })
